@@ -61,3 +61,53 @@ end
 
 
 
+
+
+friends_arr = []
+n = 1
+while n <= 10 do 
+	friends_arr[n] = "friend #{n}"
+	n += 1
+end
+
+all_num = {}
+j = 1
+while j <= 100 do 
+	all_num[j] = "?"
+	j += 1
+end
+
+direction = 1
+friend = 1
+1.upto(100) do |i|
+	all_num[i] = friends_arr[friend]
+	if i % 7 == 0 
+		direction *= -1
+	end
+	if i % 11 == 0
+		friend = friend + direction + direction
+		if friend > 10 
+			friend = 1
+		elsif friend < 1
+			friend = 10
+		end
+	else
+		friend += direction
+		if friend > 10 
+			friend = 1
+		elsif friend < 1
+			friend = 10
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
